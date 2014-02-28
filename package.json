@@ -1,6 +1,6 @@
 ﻿{
   "name": "sk-mongoose",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Open project for having utility methods for mongoose Models.",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/sushant711/sk-mongoose.git"
+  },
+  "dependencies": {
+    "underscore": "1.5.2"
   },
   "keywords": [
     "utils",

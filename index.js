@@ -1,3 +1,5 @@
+var _ = require('underscore');
+
 /*	batchStream : For batchwise full collection scan.
 	- input : (model, query, options, processing callback, callback)
 		- options :
@@ -66,8 +68,11 @@ exports.getCountMap = function(model, field, options, callback) {
 	var matchQuery = {$match: options.match};
 	
 	var unwindQuery = null;
-	if (options.unwind)
+	if (options.unwind === true) {
 		unwindQuery = {$unwind: "$" + field};
+	} else if (_.isString(options.unwind)) {
+		unwindQuery = {$unwind: "$" + options.unwind};
+	}
 
 	var groupElement = {};
 	groupElement[field] = "$" + field;
