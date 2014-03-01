@@ -1,6 +1,6 @@
-﻿{
+{
   "name": "sk-mongoose",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Open project for having utility methods for mongoose Models.",
   "main": "index.js",
   "scripts": {
@@ -18,9 +18,12 @@
     "mongoose"
   ],
   "author": "sushant711",
-  "license": "MIT",
+  "license": "BSD",
   "bugs": {
     "url": "https://github.com/sushant711/sk-mongoose/issues"
   },
-  "homepage": "https://github.com/sushant711/sk-mongoose"
+  "homepage": "https://github.com/sushant711/sk-mongoose",
+  "readmeFilename": "README.md",
+  "gitHead": "ef69ab3170535d2d5c5704de86b2dad8f31d43e2",
+  "devDependencies": {}
 }

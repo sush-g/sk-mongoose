@@ -75,7 +75,7 @@ exports.getCountMap = function(model, field, options, callback) {
 	}
 
 	var groupElement = {};
-	groupElement[field] = "$" + field;
+	groupElement[field.replace('.', '_')] = "$" + field;
 	var groupQuery = {$group: {_id: groupElement, count: {$sum: 1}}};
 
 	var sortQuery = {$sort: {count: -1}};
