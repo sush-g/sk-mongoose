@@ -1,6 +1,6 @@
 {
   "name": "sk-mongoose",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Open project for having utility methods for mongoose Models.",
   "main": "index.js",
   "scripts": {

@@ -12,6 +12,9 @@ var _ = require('underscore');
             Final callback to be called after full collection streaming.
 */
 exports.batchStream = function (model, query, options, processingCb, callback) {
+    var logCompletion = function (query) {
+        console.log("Completed batched collection streaming, query:", JSON.stringify(query));
+    };
     // Cleaning options.
     options = options || {};
     options.batchSize = options.batchSize || 1;
@@ -41,9 +44,12 @@ exports.batchStream = function (model, query, options, processingCb, callback) {
     }).on('close', function () {    // On closing stream...
         if (batch.length > 0) {
             processingCb(batch, function () {
-                console.log("Completed batched collection streaming, query:", JSON.stringify(query));
+                logCompletion(query);
                 callback();
             })
+        } else {
+            logCompletion(query);
+            callback();
         }
     });
 };
